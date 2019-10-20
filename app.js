@@ -11,6 +11,8 @@ const Campground = require('./models/campground');
 const Comment = require('./models/comment');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
+const port = process.env.PORT || 3000;
+const ip = process.env.IP || "127.0.0.1";
 
 //requiring routes
 const campgroundRoutes = require("./routes/campgrounds");
@@ -56,6 +58,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, () =>{
+app.listen(port, () =>{
 	console.log('server listening on port 3000');
 });
