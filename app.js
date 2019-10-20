@@ -1,5 +1,4 @@
 const express = require('express');
-const pass = 'PassMongo1234DB';
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -11,7 +10,7 @@ const Campground = require('./models/campground');
 const Comment = require('./models/comment');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const ip = process.env.IP || "127.0.0.1";
 
 //requiring routes
@@ -19,7 +18,7 @@ const campgroundRoutes = require("./routes/campgrounds");
 const commentRoutes = require("./routes/comments");
 const indexRoutes = require("./routes/index");
 
-mongoose.connect('mongodb+srv://webdev:' + pass + '@clusterwebdev-ikbcq.mongodb.net/yelp_camp?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useFindAndModify: false
@@ -28,6 +27,7 @@ mongoose.connect('mongodb+srv://webdev:' + pass + '@clusterwebdev-ikbcq.mongodb.
  }).catch(err => {
  	console.log('Error:', err.message);
  });
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
@@ -59,5 +59,5 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.listen(port, () =>{
-	console.log('server listening on port 3000');
+	console.log('server listening on port ' + port);
 });
