@@ -32,7 +32,7 @@ To see the app in action, go to https://pacific-everglades-07067.herokuapp.com/
 This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine. However, feel free to clone this repository if necessary.
 
 ## Clone or download this repository
-git clone https://github.com/lucasweng/yelp-camp.git
+git clone https://github.com/mihaichiciu/yelpcamp-website.git
 ## Install dependencies
 `npm install`
 ## Comments in code
