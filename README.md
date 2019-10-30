@@ -44,6 +44,7 @@ Some comments in the source code are course notes and therefore might not seem n
 * Google Maps APIs
 * Bootstrap
 ## Back-end
+* Node.js
 * express
 * mongoDB
 * mongoose
@@ -56,4 +57,4 @@ Some comments in the source code are course notes and therefore might not seem n
 * connect-flash
 ## Platforms
 * Heroku
-* Cloud9
+* GoormIDE
